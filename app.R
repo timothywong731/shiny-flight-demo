@@ -14,7 +14,7 @@ library(dplyr)
 library(ggplot2)
 library(forcats)
 library(nycflights13)
-#library(rpart.plot)
+library(rpart)
 
 myUniqueOrigin <- flights$origin %>% unique() %>% sort()
 myUniqueDest <- flights$dest %>% unique() %>% sort()

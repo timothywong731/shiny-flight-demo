@@ -1,0 +1,12 @@
+name: flights-shiny-app
+title: flights-shiny-app
+username:
+account: timothy
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 408917
+bundleId: 1555006
+url: https://timothy.shinyapps.io/flights-shiny-app/
+when: 1535317109.59521
+asMultiple: FALSE
+asStatic: FALSE
