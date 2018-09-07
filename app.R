@@ -1,18 +1,8 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(lubridate)
 library(nycflights13)
 library(dplyr)
 library(ggplot2)
-library(forcats)
 library(nycflights13)
 library(rpart)
 library(plotly)
@@ -28,13 +18,13 @@ myFlightModel <- rpart(dep_delay ~
                        na.action = na.omit,
                        control = rpart.control(cp = 0.0005))
 
-# Define UI for application that draws a histogram
+# Define UI for application
 ui <- fluidPage(
   
   # Application title
   titlePanel("Flight Delay Calculator"),
   
-  # Sidebar with a slider input for number of bins 
+  # Sidebar
   sidebarLayout(
     sidebarPanel(
       dateInput("myDate",
@@ -57,14 +47,14 @@ ui <- fluidPage(
                   selected = myUniqueCarrier[1])
     ),
     
-    # Show a plot of the generated distribution
+    # Show a plot
     mainPanel(
       plotlyOutput("myPlot")
     )
   )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic
 server <- function(input, output) {
   myNewFlightReactive <- reactive({
     tibble(date = input$myDate,
